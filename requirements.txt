@@ -1,0 +1,15 @@
+# Core dependencies for Phoenix Recovery
+pandas>=1.3.0
+sentence-transformers>=2.2.0
+scikit-learn>=1.0.0
+numpy>=1.21.0
+psutil>=5.8.0
+
+# Optional dependencies for enhanced functionality
+# torch>=1.9.0  # Usually included with sentence-transformers
+# transformers>=4.20.0  # Usually included with sentence-transformers
+
+# Development dependencies (optional)
+# pytest>=6.0.0
+# black>=22.0.0
+# flake8>=4.0.0
