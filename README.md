@@ -220,22 +220,12 @@ python -m pytest tests/
 black .
 ```
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
 - **FAT32 Specification**: Microsoft Corporation
 - **Sentence Transformers**: Hugging Face
 - **Scikit-learn**: INRIA, Telecom ParisTech
 - **Tkinter**: Python Software Foundation
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/your-repo/phoenix/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-repo/phoenix/discussions)
-- **Documentation**: [Wiki](https://github.com/your-repo/phoenix/wiki)
 
 ## 🔄 Version History
 
