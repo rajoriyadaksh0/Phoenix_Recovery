@@ -70,7 +70,7 @@ pip install psutil
 
 3. **Verify installation**
    ```bash
-   python index.py
+   python run.py
    ```
 
 ## 🚀 Usage
@@ -79,10 +79,10 @@ pip install psutil
 1. **Run the application with administrative privileges**
    ```bash
    # Windows (PowerShell as Administrator)
-   python index.py
+   python run.py
    
    # Linux/macOS
-   sudo python3 index.py
+   sudo python3 run.py
    ```
 
 2. **Select your target disk** from the dropdown menu
@@ -94,26 +94,26 @@ pip install psutil
 
 #### List Connected Disks
 ```python
-from get_drive import list_connected_disks
+from src.fs.get_drive import list_connected_disks
 disks = list_connected_disks()
 print(f"Available disks: {disks}")
 ```
 
 #### Scan for Deleted Files
 ```python
-from list_deleted_files import list_deleted_files
+from src.fs.list_deleted_files import list_deleted_files
 deleted_files = list_deleted_files("/dev/sda1")  # Replace with your disk path
 ```
 
 #### Manual Recovery
 ```python
-from main_recovery import recovery_func
+from src.core.main_recovery import recovery_func
 success = recovery_func("document.txt", 1234, 1024, "/dev/sda1")
 ```
 
 #### ML-Based Cluster Analysis
 ```python
-from model import recover
+from src.utils.model import recover
 grouped_clusters = recover("data.csv", [1,2,3,4,5], n_clusters=3, start_cluster=1)
 ```
 
@@ -133,21 +133,29 @@ The `data.csv` file contains training data for the machine learning model:
 
 ```
 phoenix/
-├── index.py                 # Main GUI application
-├── main_recovery.py         # Recovery orchestration
-├── orphanClusters.py        # Orphan cluster detection
-├── model.py                 # ML-based similarity analysis
-├── edit_fat_table.py        # FAT table manipulation
-├── edit_dir_table.py        # Directory table operations
-├── list_deleted_files.py    # Deleted file detection
-├── total_clusters.py        # Cluster calculations
-├── file_span.py            # File span analysis
-├── get_drive.py            # Disk detection
-├── get_Clusters.py         # Cluster content extraction
-├── updateCSV.py            # Data preprocessing
-├── data.csv                # ML training data
-├── README.md               # This file
-└── requirements.txt        # Python dependencies
+├── run.py                   # Application Entry Point
+├── src/
+│   ├── core/
+│   │   └── main_recovery.py # Recovery orchestration
+│   ├── fs/                  # Filesystem & Cluster Operations
+│   │   ├── get_drive.py
+│   │   ├── list_deleted_files.py
+│   │   ├── edit_fat_table.py
+│   │   ├── edit_dir_table.py
+│   │   ├── total_clusters.py
+│   │   ├── file_span.py
+│   │   └── get_Clusters.py
+│   ├── gui/
+│   │   └── index.py         # Main GUI application
+│   └── utils/               # Utilities & ML
+│       ├── model.py         # ML-based similarity analysis
+│       ├── orphanClusters.py
+│       └── updateCSV.py
+├── assets/
+├── tests/
+├── data.csv                 # ML training data
+├── README.md                # This file
+└── requirements.txt         # Python dependencies
 ```
 
 ## ⚠️ Important Notes
@@ -177,7 +185,7 @@ phoenix/
 ```bash
 # Windows: Run PowerShell as Administrator
 # Linux/macOS: Use sudo
-sudo python3 index.py
+sudo python3 run.py
 ```
 
 #### Disk Not Found
