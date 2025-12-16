@@ -1,9 +1,9 @@
-import total_clusters
-import edit_dir_table
-import edit_fat_table
-import orphanClusters
-import file_span
-# from model import recover
+from src.fs import total_clusters
+from src.fs import edit_dir_table
+from src.fs import edit_fat_table
+from src.utils import orphanClusters
+from src.fs import file_span
+# from src.utils.model import recover
 
 def recovery_func(file_name , starting_cluster , size,disk_path):
     noOfClusters = total_clusters.calculate_total_clusters(disk_path)

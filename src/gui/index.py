@@ -1,9 +1,9 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 from tkinter.font import Font
-import get_drive
-import list_deleted_files
-import main_recovery
+from src.fs import get_drive
+from src.fs import list_deleted_files
+from src.core import main_recovery
 
 # FAT32 Data Recovery Application
 class FAT32RecoveryApp:
@@ -203,7 +203,11 @@ class FAT32RecoveryApp:
         self.menu_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=20)
 
 # Run the Application
-if __name__ == "__main__":
+def main():
     root = tk.Tk()
     app = FAT32RecoveryApp(root)
     root.mainloop()
+
+# Run the Application
+if __name__ == "__main__":
+    main()

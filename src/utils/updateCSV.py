@@ -1,4 +1,4 @@
-from model import recover,print_clusters
+from src.utils.model import recover,print_clusters
 import pandas as pd
 
 
